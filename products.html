@@ -1,0 +1,690 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>DBCT Shoe</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Ion Icon Fonts-->
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<style>
+		.side {
+			background-color: #fff;
+			/* Nền trắng tinh khiết */
+			border: 1px solid #ddd;
+			/* Viền nhẹ tạo khối */
+			border-radius: 6px;
+			/* Bo góc mềm mại */
+			padding: 15px 20px;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+			/* Đổ bóng nhẹ */
+		}
+
+		.side h3 {
+			font-size: 20px;
+			font-weight: 700;
+			/* Làm đậm tiêu đề */
+			color: #333;
+			text-transform: uppercase;
+			/* Viết hoa toàn bộ */
+			border-bottom: 2px solid #007bff;
+			/* Gạch dưới màu nổi bật */
+			padding-bottom: 8px;
+			margin-bottom: 15px;
+		}
+
+		.side ul {
+			list-style: none;
+			/* Bỏ dấu chấm đầu dòng */
+			margin: 0;
+			padding: 0;
+		}
+
+		.side ul li {
+			margin-bottom: 10px;
+			/* Cách đều giữa các mục */
+		}
+
+		/* Tiêu đề kết quả tìm kiếm */
+		#ketqua-danhmuc h2 {
+			font-size: 22px;
+			font-weight: 700;
+			color: #007bff;
+			border-left: 4px solid #007bff;
+			padding-left: 10px;
+		}
+
+		/* Danh mục */
+		.side ul li a {
+			display: block;
+			text-decoration: none;
+			color: #555;
+			font-weight: 600;
+			padding: 6px 8px;
+			border-radius: 4px;
+			transition: all 0.3s ease;
+		}
+
+		/* Hover */
+		.side ul li a:hover {
+			background-color: #007bff;
+			color: #fff;
+		}
+
+		/* Active (đang chọn) */
+		.side ul li a.active {
+			background-color: #007bff;
+			color: #fff;
+			font-weight: 700;
+		}
+
+		.input-group {
+			display: flex;
+			align-items: center;
+		}
+
+		.input-group input {
+			flex: 1;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		.input-group .btn {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			padding: 0 20px;
+			font-weight: 600;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+		<nav class="colorlib-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-7 col-md-9">
+							<div id="colorlib-logo"><a href="index.html">DBCT Shoe</a></div>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-12 text-left menu-1">
+							<ul>
+								<li><a href="index.html">Trang chủ</a></li>
+
+								<li class="active"><a href="products.html">Sản phẩm</a></li>
+								<li><a href="history.html">Lịch sử đơn hàng</a></li>
+
+								<li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Giỏ hàng [0]</a>
+								</li>
+
+								<li class="account dropdown cart">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+										aria-haspopup="true" aria-expanded="false">
+										<i class="icon-user"></i> Tài khoản <span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li id="login-link"><a href="login.html">Đăng Nhập</a></li>
+    <li id="register-link"><a href="register.html">Đăng Ký</a></li>
+    <li id="logout-link" style="display: none;"><a href="login.html" onclick="logout()">Đăng Xuất</a></li>
+
+	<script>
+    // Check if the user is logged in
+    if (localStorage.getItem('login') === 'true') {
+        // Hide login and register links
+        document.getElementById('login-link').style.display = 'none';
+        document.getElementById('register-link').style.display = 'none';
+        
+        // Show logout link
+        document.getElementById('logout-link').style.display = 'block';
+    }
+
+    // Logout function (clear the login state)
+    function logout() {
+        // Clear login state from localStorage
+        localStorage.removeItem('login');
+        localStorage.removeItem('userEmail');
+        
+        // Redirect to the login page or homepage
+        window.location.href = 'login.html'; // Adjust the redirect as necessary
+    }
+</script>
+										<li><a href="profile.html">Profile</a></li> <br />
+										
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sale">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-8 offset-sm-2 text-center">
+							<div class="row">
+								<div class="owl-carousel2">
+									<div class="item">
+										<div class="col">
+											<h3><a href="#">Giảm giá 25% cho (hầu hết) tất cả sản phẩm! Sử dụng mã:
+													Summer Sale</a></h3>
+										</div>
+									</div>
+									<div class="item">
+										<div class="col">
+											<h3><a href="#">Khuyến mãi lớn nhất từ trước đến nay: Giảm 50% cho tất cả
+													giày mùa hè</a></h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</nav>
+
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<p class="bread"><span><a href="index.html">Trang chủ</a></span> / <span>Sản Phẩm</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="colorlib-product">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-xl-3">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="side border mb-1">
+									<h3>Tên sản phẩm</h3>
+									<input type="text" name="search" class="form-control form-control-lg"
+										placeholder="Tìm kiếm...">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="side border mb-1">
+									<h3>Danh mục</h3>
+									<ul>
+										<li><a href="products.html?danhmuc=chaybo" data-danhmuc="chaybo">Giày chạy
+												bộ</a></li>
+										<li><a href="products.html?danhmuc=sneaker" data-danhmuc="sneaker">Giày
+												Sneaker</a></li>
+										<li><a href="products.html?danhmuc=caogot" data-danhmuc="caogot">Giày cao
+												gót</a></li>
+									</ul>
+								</div>
+
+							</div>
+							<div class="col-sm-12">
+								<button id="btn-search" class="btn btn-primary btn-lg">Tìm</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9 col-xl-9">
+						<div id="ketqua-danhmuc" class="mb-4">
+							<h2><span id="ten-danhmuc"></span></h2>
+						</div>
+
+						<div class="row row-pb-md">
+							<div class="col-lg-4 mb-4 text-center" data-category="chaybo">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-1.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="caogot">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-2.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Structure 26 Nữ - Hồng Nâu</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="sneaker">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-3.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Quest 6 Nam - Xám Xanh Lá</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="w-100"></div>
+							<div class="col-lg-4 mb-4 text-center" data-category="chaybo">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-4.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Air Max Alpha Trainer 6 Nam -
+												Xanh</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="caogot">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-5.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="sneaker">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-6.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="w-100"></div>
+							<div class="col-lg-4 mb-4 text-center" data-category="chaybo">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-7.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="caogot">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-8.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="sneaker">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-9.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="w-100"></div>
+							<div class="col-lg-4 mb-4 text-center" data-category="chaybo">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-10.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="sneaker">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-11.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="caogot">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-12.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="w-100"></div>
+							<div class="col-lg-4 mb-4 text-center" data-category="chaybo">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-13.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="caogot">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-14.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4 text-center" data-category="sneaker">
+								<div class="product-entry border">
+									<a href="product-detail.html" class="prod-img">
+										<img src="images/item-15.jpg" class="img-fluid"
+											alt="Free html5 bootstrap 4 template">
+									</a>
+									<div class="desc">
+										<h2><a href="product-detail.html">Giày Nike Journey Run Nam - Xanh Xám</a></h2>
+										<span class="price">đ139.00</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<div class="block-27">
+									<ul>
+										<li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>
+										<li class="active"><span>1</span></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+										<li><a href="#">5</a></li>
+										<li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="colorlib-partner">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+						<h2>Thương Hiệu Của Chúng Tôi</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col partner-col text-center">
+						<img src="images/brand-1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+						<img src="images/brand-2.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+						<img src="images/brand-3.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+						<img src="images/brand-4.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+						<img src="images/brand-5.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer id="colorlib-footer" role="contentinfo">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col footer-col colorlib-widget">
+						<h4>Về DBCT Shoe</h4>
+						<p>DBCT Shoe chuyên cung cấp giày dép cao cấp, với chất lượng vượt trội và thiết kế tinh tế.
+							Chúng tôi cam kết mang lại sự hài lòng tuyệt đối cho khách hàng.</p>
+						<p>
+						<ul class="colorlib-social-icons">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+						</p>
+					</div>
+					<div class="col footer-col colorlib-widget">
+						<h4>Chăm sóc khách hàng</h4>
+						<p>
+						<ul class="colorlib-footer-links">
+							<li><a href="#">Liên hệ</a></li>
+							<li><a href="#">Đổi trả / Hoàn tiền</a></li>
+							<li><a href="#">Phiếu quà tặng</a></li>
+							<li><a href="#">Danh sách yêu thích</a></li>
+							<li><a href="#">Khuyến mãi đặc biệt</a></li>
+							<li><a href="#">Dịch vụ khách hàng</a></li>
+							<li><a href="#">Sơ đồ trang web</a></li>
+						</ul>
+						</p>
+					</div>
+					<div class="col footer-col colorlib-widget">
+						<h4>Thông tin</h4>
+						<p>
+						<ul class="colorlib-footer-links">
+							<li><a href="#">Về chúng tôi</a></li>
+							<li><a href="#">Thông tin giao hàng</a></li>
+							<li><a href="#">Chính sách bảo mật</a></li>
+							<li><a href="#">Hỗ trợ</a></li>
+							<li><a href="#">Theo dõi đơn hàng</a></li>
+						</ul>
+						</p>
+					</div>
+
+					<div class="col footer-col">
+						<h4>Tin tức</h4>
+						<ul class="colorlib-footer-links">
+							<li><a href="history.html">Lịch sử đơn hàng</a></li>
+							<li><a href="#">Báo chí</a></li>
+							<li><a href="#">Triển lãm</a></li>
+						</ul>
+					</div>
+
+					<div class="col footer-col">
+						<h4>Thông tin liên hệ</h4>
+						<ul class="colorlib-footer-links">
+							<li>291 Đường 21, <br> Tầng 7, Hà Nội, Việt Nam</li>
+							<li><a href="tel://1234567920">+84 123 456 789</a></li>
+							<li><a href="mailto:info@dbctshoe.com">info@dbctshoe.com</a></li>
+							<li><a href="#">dbctshoe.com</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="copy">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<p>
+							<span>&copy;
+
+								Mẫu này được thiết kế bởi <a href="#" target="_blank">Nguyen Huynh
+									Phuong Dong</a>
+							</span>
+
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- popper -->
+	<script src="js/popper.min.js"></script>
+	<!-- bootstrap 4.1 -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- jQuery easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Owl carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Date Picker -->
+	<script src="js/bootstrap-datepicker.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+</body>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const urlParams = new URLSearchParams(window.location.search);
+		const danhMuc = urlParams.get("danhmuc");
+		const search = urlParams.get("search");
+
+		const productContainer = document.querySelector(".row.row-pb-md");
+		const products = Array.from(productContainer.querySelectorAll(".col-lg-4"));
+		const tenDanhMucEl = document.getElementById("ten-danhmuc");
+		const boxKetQua = document.getElementById("ketqua-danhmuc");
+
+		const tenDanhMucMap = {
+			chaybo: "Giày chạy bộ",
+			sneaker: "Giày Sneaker",
+			caogot: "Giày cao gót"
+		};
+
+		let title = "";
+		let matched = [];
+
+		// --- Lọc sản phẩm ---
+		if (danhMuc) {
+			title = `Kết quả tìm kiếm cho danh mục: ${tenDanhMucMap[danhMuc] || danhMuc}`;
+			matched = products.filter(p => p.dataset.category === danhMuc);
+		}
+		else if (search) {
+			title = `Kết quả tìm kiếm cho từ khóa: ${search}`;
+			matched = products.filter(p =>
+				p.querySelector(".desc h2").innerText.toLowerCase().includes(search.toLowerCase())
+			);
+		}
+		else {
+			matched = products; // không có lọc, hiện tất cả
+		}
+
+		productContainer.innerHTML = "";
+		if (matched.length > 0) {
+			matched.forEach(p => productContainer.appendChild(p));
+		} else {
+			const noResult = document.createElement("div");
+			noResult.className = "col-12 text-center";
+			noResult.innerHTML = "<h4>Không tìm thấy sản phẩm nào phù hợp 😥</h4>";
+			productContainer.appendChild(noResult);
+		}
+
+		if (title) {
+			tenDanhMucEl.textContent = title;
+			boxKetQua.style.display = "block";
+		} else {
+			boxKetQua.style.display = "none";
+		}
+
+		const btnSearch = document.getElementById("btn-search");
+		const inputSearch = document.querySelector("input[name='search']");
+		if (btnSearch && inputSearch) {
+			btnSearch.addEventListener("click", function () {
+				const keyword = inputSearch.value.trim();
+				if (keyword) {
+					window.location.href = "products.html?search=" + encodeURIComponent(keyword);
+				} else {
+					window.location.href = "products.html";
+				}
+			});
+			inputSearch.addEventListener("keypress", function (e) {
+				if (e.key === "Enter") btnSearch.click();
+			});
+		}
+
+		document.querySelectorAll(".side ul li a").forEach(link => {
+			if (link.dataset.danhmuc === danhMuc) {
+				link.classList.add("active");
+			}
+		});
+	});
+</script>
+
+
+
+</html>
